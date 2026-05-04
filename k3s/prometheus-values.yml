@@ -1,0 +1,9 @@
+prometheus:
+  prometheusSpec:
+    additionalScrapeConfigs:
+      - job_name: 'homelab-monitor'
+        static_configs:
+          - targets: ['100.70.15.103:5000']
+      - job_name: 'node-exporter'
+        static_configs:
+          - targets: ['100.70.15.103:9100']
