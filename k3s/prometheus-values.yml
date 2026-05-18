@@ -3,10 +3,18 @@ prometheus:
     additionalScrapeConfigs:
       - job_name: 'homelab-monitor'
         static_configs:
-          - targets: ['100.70.15.103:5000']
+          - targets: ['homelab:5000']
       - job_name: 'node-exporter'
         static_configs:
-          - targets: ['100.70.15.103:9100']
+          - targets: ['homelab:9100']
+
+
+prometheus:
+  service:
+    type: NodePort
+    nodePort: 30090
+
+
 
 grafana:
   service:
