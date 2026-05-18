@@ -1,20 +1,19 @@
 name: Deploy Monitoring Stack
-
 on:
   push:
     branches:
       - main
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Prometheus values
-        run: echo "${{ secrets.PROMETHEUS_VALUES }}" > k3s/prometheus-values.yml
+      - name: Write Prometheus values
+        run: |
+          mkdir -p k3s
+          echo "${{ secrets.PROMETHEUS_VALUES }}" > k3s/prometheus-values.yml
 
       - name: Connect to Tailscale
         uses: tailscale/github-action@v2
