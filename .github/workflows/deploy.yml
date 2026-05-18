@@ -13,6 +13,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Write Prometheus values
+        run: echo "${{ secrets.PROMETHEUS_VALUES }}" > k3s/prometheus-values.yml
+
       - name: Connect to Tailscale
         uses: tailscale/github-action@v2
         with:
@@ -39,6 +42,3 @@ jobs:
       - name: Terraform Apply
         run: terraform apply -auto-approve
         working-directory: terraform
-
-      - name: Prometheus values
-        run: echo "${{ secrets.PROMETHEUS_VALUES }}" > k3s/prometheus-values.yml
