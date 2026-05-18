@@ -39,3 +39,6 @@ jobs:
       - name: Terraform Apply
         run: terraform apply -auto-approve
         working-directory: terraform
+
+      - name: Prometheus values
+        run: echo "${{ secrets.PROMETHEUS_VALUES }}" > k3s/prometheus-values.yml
