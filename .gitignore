@@ -2,3 +2,4 @@
 .terraform.lock.hcl
 *.tfstate
 *.tfstate.backup
+k3s/prometheus-values.yml
