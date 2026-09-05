@@ -1,4 +1,4 @@
-# homelab-monitor 🖥️
+# homelab-monitor
 
 A production-style monitoring stack for a self-hosted Kubernetes homelab — built with Prometheus, Grafana, and automated via Terraform and GitHub Actions CI/CD.
 
@@ -6,7 +6,7 @@ A production-style monitoring stack for a self-hosted Kubernetes homelab — bui
 
 ---
 
-## 📖 The Story
+## The Story
 
 This project started as a simple Docker Compose setup — Prometheus and Grafana running as containers on a single server with no automation, no persistence, and no real infrastructure story.
 
@@ -14,13 +14,13 @@ As my homelab evolved toward Kubernetes (K3s), I migrated the entire monitoring 
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ![Architecture](./screenshots/Architecture.png)
 
 ---
 
-## 🛠️ Stack
+## Stack
 
 | Tool                      | Purpose                                                            |
 | ------------------------- | ------------------------------------------------------------------ |
@@ -35,7 +35,7 @@ As my homelab evolved toward Kubernetes (K3s), I migrated the entire monitoring 
 
 ---
 
-## 🔄 Migration: Docker → Kubernetes
+## Migration: Docker → Kubernetes
 
 The original setup used Docker Compose:
 
@@ -69,7 +69,7 @@ services:
 
 ---
 
-## 🚀 How to Deploy
+## How to Deploy
 
 ### Prerequisites
 
@@ -113,7 +113,7 @@ terraform apply
 
 ---
 
-## 📊 What's Being Monitored
+## What's Being Monitored
 
 | Target            | Port | Metrics                    |
 | ----------------- | ---- | -------------------------- |
@@ -124,7 +124,7 @@ Prometheus scrapes both targets via `additionalScrapeConfigs` in `prometheus-val
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 homelab-monitor/
@@ -143,7 +143,7 @@ homelab-monitor/
 
 ---
 
-## 🔐 Security
+## Security
 
 - Homelab is not publicly exposed — accessible only via Tailscale VPN
 - GitHub Actions runner connects via ephemeral Tailscale OAuth node
@@ -151,7 +151,7 @@ homelab-monitor/
 
 ---
 
-## 📚 Key Concepts Demonstrated
+## Key Concepts Demonstrated
 
 - **Infrastructure as Code** — Terraform manages all Kubernetes resources
 - **GitOps pattern** — every infrastructure change goes through Git
